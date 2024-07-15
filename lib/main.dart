@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
         hintColor: Colors.orange,
         brightness: Brightness.light,
         textTheme: const TextTheme(
-          headline1: TextStyle(
+          displayLarge: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Color.fromARGB(255, 108, 49, 205)),
-          bodyText1: TextStyle(fontSize: 18, color: Colors.black),
-          bodyText2: TextStyle(fontSize: 16, color: Colors.black),
+          bodyLarge: TextStyle(fontSize: 18, color: Colors.black),
+          bodyMedium: TextStyle(fontSize: 16, color: Colors.black),
         ),
         cardTheme: const CardTheme(
           color: Colors.white,
