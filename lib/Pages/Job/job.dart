@@ -52,7 +52,7 @@ class JobApplicationsPage extends StatelessWidget {
             ),
             Text(
               'Job Applications',
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.displayLarge,
             ),
             SizedBox(
               height: 10,
@@ -65,10 +65,10 @@ class JobApplicationsPage extends StatelessWidget {
                   return Card(
                     child: ListTile(
                       title: Text(application.title,
-                          style: Theme.of(context).textTheme.bodyText1),
+                          style: Theme.of(context).textTheme.bodyLarge),
                       subtitle: Text(
                           '${application.company}\n${application.description}',
-                          style: Theme.of(context).textTheme.bodyText2),
+                          style: Theme.of(context).textTheme.bodyMedium),
                       trailing: Text(application.status,
                           style: TextStyle(
                               color: _getStatusColor(application.status))),
@@ -82,7 +82,7 @@ class JobApplicationsPage extends StatelessWidget {
             ),
             Text(
               'Proposals',
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.displayLarge,
             ),
             SizedBox(
               height: 10,
@@ -95,10 +95,10 @@ class JobApplicationsPage extends StatelessWidget {
                   return Card(
                     child: ListTile(
                       title: Text(proposal.title,
-                          style: Theme.of(context).textTheme.bodyText1),
+                          style: Theme.of(context).textTheme.bodyLarge),
                       subtitle: Text(
                           '${proposal.client}\n${proposal.description}',
-                          style: Theme.of(context).textTheme.bodyText2),
+                          style: Theme.of(context).textTheme.bodyMedium),
                       trailing: Text(proposal.status,
                           style: TextStyle(
                               color: _getStatusColor(proposal.status))),
