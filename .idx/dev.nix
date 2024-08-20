@@ -4,6 +4,7 @@
     pkgs.nodePackages.firebase-tools
     pkgs.jdk17
     pkgs.unzip
+    pkgs.apt
     pkgs.adoptopenjdk-bin
   ];
   idx.extensions = [
@@ -39,4 +40,3 @@
       };
     };
   };
-}
