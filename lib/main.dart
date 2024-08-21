@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:you/screens/homepage.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:you/screens/create-new-account.dart';
+import 'package:you/screens/homepage.dart';
+import 'package:you/screens/login.dart';
+import 'package:you/screens/forgot-password.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,15 +23,16 @@ class MyApp extends StatelessWidget {
       title: 'Your Own Universe',
       theme: ThemeData(
         primarySwatch: Colors.purple,
-        hintColor: Colors.orange,
+        hintColor: Colors.white,
+        primaryColor: const Color(0xff6c31cd),
         brightness: Brightness.light,
         textTheme: const TextTheme(
           displayLarge: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Color.fromARGB(255, 108, 49, 205)),
-          bodyLarge: TextStyle(fontSize: 18, color: Colors.black),
-          bodyMedium: TextStyle(fontSize: 16, color: Colors.black),
+          bodyLarge: TextStyle(fontSize: 18, color: Colors.white),
+          bodyMedium: TextStyle(fontSize: 16, color: Colors.white),
         ),
         cardTheme: const CardTheme(
           color: Colors.white,
@@ -44,7 +47,13 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginScreen(),
+        'ForgotPassword': (context) => ForgotPassword(),
+        'HomePage': (context) => const HomePage(),
+        'CreateNewAccount': (context) => const CreateNewAccount(),
+      },
     );
   }
 }
