@@ -50,37 +50,41 @@ class LoginScreen extends StatelessWidget {
                     hint: 'Password',
                     inputAction: TextInputAction.done,
                   ),
-                  GestureDetector(
-                    onTap: () =>
-                        Navigator.pushNamed(context, 'ForgotPassword'),
-                    child: const Text(
-                      'Forgot Password',
-                      style: kBodyText,
-                    ),
-                  ),
+                  // GestureDetector(
+                  //   onTap: () =>
+                  //       Navigator.pushNamed(context, 'ForgotPassword'),
+                  //   child: const Text(
+                  //     'Forgot Password',
+                  //     style: kBodyText,
+                  //   ),
+                  // ),
                   const SizedBox(
                     height: 25,
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: kBlue,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 100, vertical: 20),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                  Align(
+                    alignment: Alignment.center,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: kBlue,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 100, vertical: 20),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
                       ),
-                    ),
-                    onPressed: () {
-                      // Handle the login logic here
-                      print('Email: ${_emailController.text}');
-                      print('Password: ${_passwordController.text}');
-                    },
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'ChooseCommunity');
+                        // Handle the login logic here
+                        print('Email: ${_emailController.text}');
+                        print('Password: ${_passwordController.text}');
+                      },
+                      child: const Text(
+                        'Login',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),

@@ -12,6 +12,7 @@ class CreateNewAccount extends StatefulWidget {
   const CreateNewAccount({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CreateNewAccountState createState() => _CreateNewAccountState();
 }
 
@@ -79,8 +80,7 @@ class _CreateNewAccountState extends State<CreateNewAccount> {
                             filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
                             child: CircleAvatar(
                               radius: size.width * 0.14,
-                              backgroundColor:
-                                  Colors.white,
+                              backgroundColor: Colors.white,
                               backgroundImage:
                                   _image != null ? FileImage(_image!) : null,
                               child: _image == null
@@ -176,26 +176,52 @@ class _CreateNewAccountState extends State<CreateNewAccount> {
                       ),
                       DropdownButtonFormField<String>(
                         decoration: const InputDecoration(
-                          icon: Icon(FontAwesomeIcons.child),
+                          icon: Icon(
+                            FontAwesomeIcons.child,
+                            color: Colors.white,
+                          ),
                           hintText: 'Select Age Group',
+                          hintStyle: TextStyle(color: Colors.white),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
                         ),
                         value: selectedAgeGroup,
                         items: const [
                           DropdownMenuItem(
-                              value: 'Pre-Teens',
-                              child: Text('Pre-Teens (12-15yrs)')),
+                            value: 'Pre-Teens',
+                            child: Text(
+                              'Pre-Teens (12-15yrs)',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
                           DropdownMenuItem(
-                              value: 'Late Teens',
-                              child: Text('Late Teens (16-19yrs)')),
+                            value: 'Late Teens',
+                            child: Text(
+                              'Late Teens (16-19yrs)',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
                           DropdownMenuItem(
-                              value: 'Adults',
-                              child: Text('Adults (20 and above)')),
+                            value: 'Adults',
+                            child: Text(
+                              'Adults (20 and above)',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
                         ],
                         onChanged: (value) {
                           setState(() {
                             selectedAgeGroup = value;
                           });
                         },
+                        style: const TextStyle(
+                            color: Colors.white), // Style for selected item
+                        dropdownColor:
+                            Colors.black, // Background color for dropdown menu
                         validator: (value) {
                           if (value == null) {
                             return 'Please select your age group';
@@ -213,7 +239,8 @@ class _CreateNewAccountState extends State<CreateNewAccount> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
                           ),
-                          padding: const EdgeInsets.symmetric(vertical: 20),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 150),
                         ),
                         child: Text(
                           "Register",

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:you/screens/choosecommunity.dart';
 import 'package:you/screens/create-new-account.dart';
 import 'package:you/screens/homepage.dart';
 import 'package:you/screens/login.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoginScreen(),
         'ForgotPassword': (context) => ForgotPassword(),
         'HomePage': (context) => const HomePage(),
+        'ChooseCommunity': (context) => const ChooseCommunity(),
         'CreateNewAccount': (context) => const CreateNewAccount(),
       },
     );
